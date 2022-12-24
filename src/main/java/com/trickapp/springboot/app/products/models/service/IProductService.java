@@ -6,5 +6,6 @@ import com.trickapp.springboot.app.products.models.entity.Product;
 
 public interface IProductService {
 	public List<Product> findAll();
+
 	public Product findById(Long id);
 }
