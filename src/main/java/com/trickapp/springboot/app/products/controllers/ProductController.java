@@ -16,11 +16,6 @@ public class ProductController {
 	@Autowired
 	private IProductService productService;
 
-	@GetMapping("/hw")
-	public String helloWorld() {
-		return "hw";
-	}
-
 	@GetMapping("/getAll")
 	public List<Product> getAll() {
 		return productService.findAll();
