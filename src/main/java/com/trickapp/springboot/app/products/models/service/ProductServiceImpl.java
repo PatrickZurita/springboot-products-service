@@ -24,8 +24,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	@Transactional(readOnly = true)
 	public Product findById(Long id) {
-		return productDao.findById(id).orElse(null); // productDao.findById(id) is a Optional,
-														// https://www.baeldung.com/java-optional
+		return productDao.findById(id).orElse(null);
 	}
 
 }
