@@ -16,9 +16,6 @@ import com.trickapp.springboot.app.products.models.service.IProductService;
 @RestController
 public class ProductController {
 
-	// @Autowired
-	// private Environment env;
-
 	@Value("${server.port}")
 	private Integer port;
 
@@ -28,7 +25,6 @@ public class ProductController {
 	@GetMapping("/getAll")
 	public List<Product> getAll() {
 		return productService.findAll().stream().map(product -> {
-			// product.setPort(Integer.parseInt(env.getProperty("local.server.port")));
 			product.setPort(port);
 			return product;
 		}).collect(Collectors.toList());
@@ -37,7 +33,6 @@ public class ProductController {
 	@GetMapping("/getById/{id}")
 	public Product getById(@PathVariable Long id) {
 		Product product = productService.findById(id);
-		// product.setPort(Integer.parseInt(env.getProperty("local.server.port")));
 		product.setPort(port);
 		return product;
 	}
